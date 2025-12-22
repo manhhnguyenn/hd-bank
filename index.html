@@ -1,0 +1,299 @@
+ <!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Hỗ trợ vay theo lương HDBank</title>
+	<meta name="description" content="Chúng tôi cung cấp dịch vụ tư vấn vay theo lương, vay qua lương, hỗ trợ tiêu dùng theo lương – vay không tài sản đảm bảo, thủ tục đơn giản, lãi suất hấp dẫn, giải ngân nhanh. Phù hợp nhân viên văn phòng, công chức, bác sĩ... Đăng ký online ngay hôm nay!">
+	<meta name="keywords"
+    content="Vay theo lương, vay bằng lương, vay qua lương, vay bằng bảng lương, cho vay theo lương, cho vay qua lương, cho vay bằng bảng lương, đăng ký vay qua lương, thủ tục vay theo lương, thủ tục vay qua lương, thủ tục vay bằng bảng lương, quy trình vay qua lương, quy trình vay theo lương, quy trình vay bằng lương, Vay qua lương lãi thấp, vay qua lương online, giải ngân vay qua lương, Vay qua lương uy tín, vay theo lương online, vay bằng bảng lương online, vay qua lương cho cá nhân, vay tiêu dùng, vay tiêu dùng qua lương">
+	<link rel="stylesheet" href="css/main.css" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+	<!-- Google tag (gtag.js) -->
+    
+</head>
+
+<body>
+
+	<!-- Header -->
+	<header class="site-header">
+		<nav class="navbar container">
+			<!--<a class="logo" href="#">VayTheoLương</a>-->
+			<button class="menu-toggle" onclick="toggleMenu()">
+				<i id="menu-icon" class="fas fa-bars" aria-hidden="true"></i>
+				<span class="sr-only">Mở menu</span>
+			</button>
+			<ul id="nav-links" class="nav-links">
+				<li><a onclick="closeMenu()" href="#benefits">Lợi ích</a></li>
+				<li><a onclick="closeMenu()" href="#requirements">Yêu cầu</a></li>
+				<li><a onclick="closeMenu()" href="#rates">Lãi suất</a></li>
+				<li><a onclick="closeMenu()" href="#faq">FAQ</a></li>
+				<li><a onclick="closeMenu()" href="#contact">Liên hệ</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Hero (GIỮ FORM TRONG BANNER) -->
+	<section class="hero">
+		<div class="overlay-gradient"></div>
+		<div class="container hero-inner">
+			<div class="hero-copy reveal">
+				<h1>HDBank - Hỗ trợ vay qua lương <span>nhanh – minh bạch – dễ dàng</span></h1>
+				<p>Hạn mức linh hoạt đến 24 lần lương. Duyệt hồ sơ nhanh, giải ngân 24–72 giờ.</p>
+				<a href="#form" class="btn btn-primary">Đăng ký ngay</a>
+				<div class="hero-badges">
+					<span><i class="fa-solid fa-shield-check"></i> Bảo mật</span>
+					<span><i class="fa-solid fa-percent"></i> Lãi thấp</span>
+					<span><i class="fa-solid fa-bolt"></i> Nhanh chóng</span>
+				</div>
+				<div class="mrk-text" style="margin-top: 20px">
+                    <p class="title"> <i class="fas fa-check"></i>  Lãi suất cố định chỉ từ 0,6%/tháng</p>
+                    <p class="title"> <i class="fas fa-check"></i>  Hạn mức vay tối đa lên tới 24 lần lương</p>
+                    <p class="title"> <i class="fas fa-check"></i>  Thời gian vay linh hoat từ 12 - 60 tháng</p>
+                    <p class="title"> <i class="fas fa-check"></i>  Giải ngân nhanh chóng trong vòng 48 giờ sau khi hồ sơ được duyệt</p>
+                    <p class="title"> <i class="fas fa-check"></i>  Không thẩm định, không gọi điện người thân</p>
+                </div>
+			</div>
+
+			<!-- GIỮ form đăng ký, class contact-form để JS hiện tại vẫn chạy -->
+			<div class="hero-form reveal" id="form">
+				<h2>Đăng ký vay</h2>
+				<form class="contact-form">
+					<div class="form-row">
+						<input type="text" name="name" placeholder="Họ và tên" required />
+					</div>
+					<div class="form-row">
+						<input type="tel" name="phone" placeholder="Số điện thoại" required />
+					</div>
+					<div class="form-row">
+						<select name="type" required>
+							<option value="" disabled selected>Nhóm đối tượng</option>
+							<option value="NV">Nhân viên công ty</option>
+							<option value="Công chức">Công chức / Viên chức</option>
+							<option value="Bộ đội/công an">Bộ đội / Công an</option>
+							<option value="Khác">Khác</option>
+						</select>
+					</div>
+					<div class="form-row">
+						<input type="text" name="amount" placeholder="Hạn mức vay (VD: 50,000,000)" required />
+					</div>
+					<button type="submit" class="btn btn-primary btn-block">Gửi đăng ký</button>
+					<p class="form-note"><i class="fa-regular fa-circle-check"></i> Không phí hồ sơ • Không phí bảo hiểm
+					</p>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<!-- Loading overlay cho JS hiện tại -->
+	<div id="loading-overlay" class="loading-overlay" aria-hidden="true">
+		<div class="spinner"></div>
+	</div>
+
+	<!-- LỢI ÍCH -->
+	<section id="benefits" class="section container reveal">
+		<h2 class="section-title">Lợi ích khi vay</h2>
+		<div class="features-grid">
+			<article class="feature-card">
+				<div class="icon"><i class="fa-solid fa-percent"></i></div>
+				<h3>Lãi suất thấp</h3>
+				<p>Chỉ từ 0.6%–0.8%/tháng theo dư nợ giảm dần.</p>
+			</article>
+			<article class="feature-card">
+				<div class="icon"><i class="fa-solid fa-bolt"></i></div>
+				<h3>Giải ngân nhanh</h3>
+				<p>Duyệt và giải ngân trong 24–72 giờ.</p>
+			</article>
+			<article class="feature-card">
+				<div class="icon"><i class="fa-solid fa-user-shield"></i></div>
+				<h3>An toàn & bảo mật</h3>
+				<p>Dữ liệu khách hàng được mã hóa và bảo vệ.</p>
+			</article>
+			<article class="feature-card">
+				<div class="icon"><i class="fa-solid fa-gift"></i></div>
+				<h3>Ưu đãi hấp dẫn</h3>
+				<p>Không phí hồ sơ, không gọi điện người thân.</p>
+			</article>
+		</div>
+	</section>
+
+	<!-- YÊU CẦU & HỒ SƠ -->
+	<section id="requirements" class="section alt-bg reveal">
+		<div class="container two-col">
+			<div class="box">
+				<h2 class="section-title left">Yêu cầu đối tượng</h2>
+				<ul class="checklist">
+					<li>Nam-nữ từ 21 tuổi, thu nhập ≥ 5 triệu/tháng, có nhu cầu hỗ trợ tiêu dùng qua lương</li>
+					<li>Nhận lương qua tài khoản ngân hàng</li>
+					<li>Không có nợ xấu nhóm 3 trở lên</li>
+				</ul>
+			</div>
+			<div class="box">
+				<h2 class="section-title left">Hồ sơ cần có</h2>
+				<ul class="checklist">
+					<li>CMND/Hộ chiếu còn hiệu lực</li>
+					<li>Hợp đồng lao động / xác nhận công tác</li>
+					<li>Sao kê lương 3 tháng gần nhất</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<!-- BẢNG LÃI SUẤT -->
+	<section id="rates" class="section container reveal">
+		<h2 class="section-title">Bảng lãi suất minh họa</h2>
+		<div class="card table-card">
+			<img src="images/bang_lai.webp" alt="Bảng lãi minh họa" style="width: 100%;">
+			<p class="table-note">(*)Lưu ý: Lãi suất thực tế có thể thay đổi theo hồ sơ.
+			</p>
+		</div>
+	</section>
+
+	<!-- CTA -->
+	<section class="cta reveal">
+		<div class="container cta-inner">
+			<h2>Bắt đầu hồ sơ của bạn hôm nay với HDBank</h2>
+			<p>Nhấn đăng ký để được chuyên viên HDBank liên hệ trong ngày.</p>
+			<div class="hero-form reveal" id="form">
+				<h2>Đăng ký vay</h2>
+				<form class="contact-form">
+					<div class="form-row">
+						<input type="text" name="name" placeholder="Họ và tên" required />
+					</div>
+					<div class="form-row">
+						<input type="tel" name="phone" placeholder="Số điện thoại" required />
+					</div>
+					<div class="form-row">
+						<select name="type" required>
+							<option value="" disabled selected>Nhóm đối tượng</option>
+							<option value="NV">Nhân viên công ty</option>
+							<option value="Công chức">Công chức / Viên chức</option>
+							<option value="Bộ đội/công an">Bộ đội / Công an</option>
+							<option value="Khác">Khác</option>
+						</select>
+					</div>
+					<div class="form-row">
+						<input type="text" name="amount" placeholder="Hạn mức vay (VD: 50,000,000)" required />
+					</div>
+					<button type="submit" class="btn btn-primary btn-block">Gửi đăng ký</button>
+					<p class="form-note"><i class="fa-regular fa-circle-check"></i> Không phí hồ sơ • Không phí bảo hiểm
+					</p>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<!-- TESTIMONIALS SLIDER -->
+	<section id="testimonials" class="section container reveal">
+		<h2 class="section-title">Khách hàng nói gì?</h2>
+		<div class="slider">
+			<button class="nav prev" onclick="prevSlide()" aria-label="Slide trước">❮</button>
+			<div id="testimonial-slider" class="slides">
+				<div class="slide active">
+					<img src="https://i.pravatar.cc/80?img=12" alt="Văn Hùng" class="avatar" />
+					<p>“Dịch vụ nhanh, nhân viên hỗ trợ nhiệt tình.”</p>
+					<strong>Văn Hùng, 27 tuổi</strong>
+				</div>
+				<div class="slide">
+					<img src="https://i.pravatar.cc/80?img=32" alt="Mai Hương" class="avatar" />
+					<p>“Lãi suất minh bạch, thủ tục gọn nhẹ.”</p>
+					<strong>Mai Hương, 35 tuổi</strong>
+				</div>
+				<div class="slide">
+					<img src="https://i.pravatar.cc/80?img=45" alt="Lan Chi" class="avatar" />
+					<p>“Mình được giải ngân chỉ sau 2 ngày nộp hồ sơ.”</p>
+					<strong>Lan Chi, 29 tuổi</strong>
+				</div>
+			</div>
+			<button class="nav next" onclick="nextSlide()" aria-label="Slide sau">❯</button>
+		</div>
+	</section>
+
+	<!-- FAQ -->
+	<section id="faq" class="section container reveal">
+		<h2 class="section-title">Câu hỏi thường gặp</h2>
+		<div class="faq">
+			<details>
+				<summary>Tính toán khả năng trả nợ</summary>
+				<p>Khi vay, bạn cần phải biết chính xác về khả năng thanh toán hàng tháng của mình. Số tiền
+					chi trả hàng tháng không nên vượt quá 50% tổng thu nhập hàng tháng của bạn</p>
+			</details>
+			<details>
+				<summary>Thời gian giải ngân?</summary>
+				<p>Khoảng 24–72 giờ sau khi duyệt hồ sơ.</p>
+			</details>
+			<details>
+				<summary>Thanh toán sớm</summary>
+				<p>Các ngân hàng sẽ bị thiệt nếu bạn trả nợ sớm, do đó các ngân hàng thường đưa ra một con số % bạn phải
+					trả thêm nếu bạn tiến hành tất toán trước hạn.</p>
+			</details>
+			<details>
+				<summary>Trả chậm có bị phạt không?</summary>
+				<p>Có, khi bạn trả chậm thì lãi suất phạt sẽ là 150% lãi suất trên những ngày bạn nộp chậm. Nếu thời
+					gian trả chậm từ 10 ngày trở lên lịch sử CIC sẽ được lưu trên ngân hàng nhà nước Việt Nam.</p>
+			</details>
+			<details>
+				<summary>Có phải nộp khoản lệ phí nào khi làm hồ sơ vay vốn không?</summary>
+				<p>Không, Khách hàng không mất thêm bất kỳ khoản lệ phí nào như phí làm hồ sơ, phí thẩm định, phí tư
+					vấn. Không phải thế chấp bất kỳ giấy tờ hay tài sản nào.</p>
+			</details>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer id="contact" class="site-footer">
+		<div class="container footer-grid">
+			<div class="item">
+				<h4 class="uppercase">Liên hệ</h4>
+                <p>Hotline: <strong style="">11111</strong></p>
+                <p>Địa chỉ: 19 Thái Hà, Đống Đa, Hà Nội</p>
+                <p>Website: https://hdbank-tuvantieudung.site/</p>
+			</div>
+			<div class="item">
+				<h4 class="uppercase">Chính sách</h4>
+                <p>- Chúng tôi cam kết bảo mật thông tin khách hàng. Không chịu trách nhiệm cho trường hợp thông tin
+                    không chính
+                    xác từ khách hàng.</p>
+                <p>- Chúng tôi không phải là đơn vị cung cấp dịch vụ cho vay và không phát hành các khoản vay. Dịch vụ
+                    của Chúng
+                    tôi giúp kết nối khách hàng với các Tổ chức uy tín tại Việt Nam.
+                    Chúng tôi không tính phí sử dụng dịch vụ. Chi phí cuối cùng mà người vay phải trả phụ thuộc vào từng
+                    khoản
+                    vay. Người dùng sẽ nhận được thông tin đầy đủ và chính xác về APR, cũng như tất cả các khoản phí
+                    trước khi ký
+                    hợp đồng vay.</p>
+			</div>
+			<div class="item">
+				<h4 class="uppercase">Ghi chú</h4>
+                <p>- Dịch vụ hỗ trợ tiêu dùng qua lương giúp bạn dễ dàng tiếp cận nguồn vốn nhanh chóng mà không cần thế chấp.</p>
+                <p>- Với hình thức vay qua lương lãi suất thấp, bạn có thể giải ngân chỉ trong 24h.</p>
+                <p>- Chúng tôi hỗ trợ thủ tục vay bằng bảng lương đơn giản, minh bạch.</p>
+                <p>- Vay theo lương online phù hợp cho cá nhân nhận lương qua tài khoản.</p>
+                <p>- Quy trình hỗ trợ/vay tiêu dùng qua lương nhanh gọn, đảm bảo uy tín và bảo mật thông tin.</p>
+			</div>
+		</div>
+		<div class="copy">© 2025 Tư Vấn Tiêu Dùng HDBank. All rights reserved.</div>
+	</footer>
+	<!-- Floating Contact Buttons -->
+	<div class="floating-contact">
+		<a href="tel:11111" class="float-btn phone" aria-label="Gọi ngay">
+			<i class="fa-solid fa-phone"></i>
+		</a>
+		<a href="https://zalo.me/11111" target="_blank" class="float-btn zalo" aria-label="Chat Zalo">
+			<i class="fa-solid fa-comment-dots"></i>
+		</a>
+	</div>
+	<!-- Floating Contact Buttons Left -->
+<div class="floating-contact-left">
+	<a href="tel:11111" class="float-btn phone" aria-label="Gọi ngay">
+		<i class="fa-solid fa-phone"></i>
+	</a>
+	<a href="https://zalo.me/11111" target="_blank" class="float-btn zalo" aria-label="Chat Zalo">
+		<i class="fa-solid fa-comment-dots"></i>
+	</a>
+</div>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
